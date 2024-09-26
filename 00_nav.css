@@ -1,0 +1,427 @@
+.drawer_menu a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.drawer_menu a:visited {
+    color: inherit;
+}
+
+
+/* PC用ナビゲーション */
+
+.drawer_menu .drawer_nav_wrapper {
+    transform: translate(0);
+    width: 100%;
+    height: 50px;/* PC用メニュー高さ */
+    position: relative;
+    top: auto;
+    right: auto;
+    z-index: 100;
+    background-color: #a68b62;/* PC用メニュー背景色 */
+    font-size:1.15rem;
+}
+
+.drawer_menu .drawer_nav {
+max-width: 1000px;/* コンテンツ幅に合わせる */
+padding: 0;
+margin: 0 auto;
+width: 100%;
+display:flex;
+justify-content: center;}
+
+.drawer_menu .drawer_nav li {
+margin: 0;
+padding: 0;
+height: 50px;/* PC用メニュー高さ */
+line-height: 50px;/* PC用メニュー高さ */
+background-color: #a68b62;/* PC用メニューボタン背景色 */
+text-align: center;
+list-style-type: none;
+font-size: 88%;
+}
+p.header-txt {
+    font-size: 0.8rem;
+    margin: 0 0 -5px 0;
+}
+
+/* 大きい画面用の設定-------------- */
+@media (min-width:768px){
+#beautypage .drawer_menu .drawer_nav_wrapper {
+    background-color: #595757;/* PC用メニュー背景色 */
+}
+    
+#beautypage .drawer_menu .drawer_nav li {
+background-color: #595757;/* PC用メニューボタン背景色 */
+}
+	}
+/* -------------end------------- */
+
+.drawer_menu .drawer_nav > li {
+margin-left: 15px;
+margin-right: 15px;
+}
+
+.drawer_menu .drawer_nav > li a{
+color: #fff;/* PC用メニューボタン文字色 */
+display: block;
+}
+
+
+/* PC非表示 */
+
+@media screen and (min-width:1001px) {
+    .pc-hidden {
+        display: none;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1001px) {
+/* ドロップダウンメニュー2階層目 */
+/* -------------------- */
+/* -------------------------- */
+ul.drawer_nav li {
+/*width: 125px;*/			/* メニュー項目の横幅(125px) */
+display: inline-block;	/* ★横並びに配置する */
+list-style-type: none;	/* ★リストの先頭記号を消す */
+position: relative;		/* ★サブメニュー表示の基準位置にする */
+}
+ul.drawer_nav a {
+line-height: 50px;			/* メニュー項目のリンクの高さ(50px) */
+text-align: center;			/* メインメニューの文字列の配置(中央寄せ) */
+text-decoration: none;		/* メニュー項目の装飾(下線を消す) */
+display: block;				/* ★項目内全域をリンク可能にする */
+		}
+ul.drawer_nav a:hover {
+    color: #ffffff;
+}
+
+/* ---------------------------------- */
+/* ▼サブメニューがある場合に開く処理 */	/* ※サブメニューが2階層以上ある場合の記述 */
+/* ---------------------------------- */
+ul.drawer_nav li:hover > ul {
+display: block;			/* ★マウスポインタが載っている項目の内部にあるリストを表示する */
+		}
+
+/* -------------------- */
+/* ▼サブメニューの装飾 */
+/* -------------------- */
+ul.drawer_nav ul {
+margin: 0px;			/* ★サブメニュー外側の余白(ゼロ) */
+padding: 0px;			/* ★サブメニュー内側の余白(ゼロ) */
+display: none;			/* ★標準では非表示にする */
+position: absolute;		/* ★絶対配置にする */
+/*border-radius: 10px;*//* ドロップダウンメニュー角丸 */
+/*border: 1px solid #00B26E;*//* ドロップダウンメニュー枠 */
+
+}
+
+/* ------------------------ */
+/* ▼サブメニュー項目の装飾 */
+/* ------------------------ */
+ul.drawer_nav ul li {
+/*border-bottom: 1px solid #00B26E;*/		/* 項目下側の枠線*/
+width: 200px;/* ドロップダウンメニューボタン横幅 */
+height: 50px;/* Pドロップダウンメニューボタン高さ */
+}
+    
+ ul.drawer_nav ul li:last-child {
+border-bottom: none;		/* 項目下側の枠線削除 */
+
+}
+ul.drawer_nav ul li a {
+			text-align: left;		/* 文字列の配置(左寄せ) */
+			padding-left: 5px;		/* 文字列前方の余白(5px) */
+			font-weight: normal;	/* 太字にはしない */
+		}
+    
+ul.drawer_nav ul li a:hover {
+/*background-color: #595757;
+*/	/* サブメニュー項目にマウスが載ったときの背景色(淡い黄色) */
+}
+
+
+
+/* -------------------------------------------------------- */
+/* ▼サブメニューの内側にあるサブメニュー(孫メニュー)の装飾 */	/* ※サブメニューの中のサブメニューは「下」ではなく「横(右)」に表示します。 */
+/* -------------------------------------------------------- */
+ul.drawer_nav ul ul {
+margin: 0px;			/* ★サブメニュー外側の余白(ゼロ) */
+padding: 0px;			/* ★サブメニュー内側の余白(ゼロ) */
+display: none;			/* ★標準では非表示にする */
+position: absolute;		/* ★絶対配置にする */
+top: -1px;				/* 1pxだけ上方向にずらす(※上に1pxの枠線を引いている場合) */
+left: 105%;				/* ★基準位置からの距離を親ボックスの幅100％にする */
+border-left: 1px solid #00B26E;	/* 左側に引く枠線(ピンク色で1pxの実線) */
+		}
+    
+ul.drawer_nav ul ul li {
+width: 200px;/* 三階層目ドロップダウンメニューボタン横幅 */
+}
+}
+
+/*++++++++++++++++++ Default Button Color ++++++++++++++++++*/
+
+.drawer_menu .drawer_button {
+    color: #fff;/* ハンバーガーメニュー文字色 */
+    display: none;
+}
+
+.drawer_menu .drawer_button .drawer_bar {
+    background-color: #fff;/* ハンバーガーメニュー三本線の色 */
+}
+
+
+/* 1000px以下 */
+
+@media screen and (max-width: 1000px) {
+    .drawer_menu .drawer_bg {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 9999;
+        background-color: rgba(207,190,167,0.20);
+        display: none;
+        top: 0;
+        left: 0;
+    }
+.drawer_menu .drawer_button {
+        display: block;
+        background: none;
+        border: none;
+        padding: 0;
+        width: 52px;
+        letter-spacing: 0.1em;
+        cursor: pointer;
+        position: fixed;
+        top: 10px;
+        right: 20px;
+        z-index: 10001;
+        text-align: center;
+        outline: none;
+		background-color:#a68b62;/* メニューボタン背景 */
+		padding: 5px;
+    }
+    
+#beautypage .drawer_menu .drawer_button {background-color:#595757;/* 美容メニューボタン背景 */} 
+	
+.drawer_menu .drawer_button.active {
+		background-color: #a68b62;/* メニューボタン×の時背景 */
+    }
+    
+#beautypage .drawer_button.active {
+		background-color: #a68b62;/* 美容メニューボタン×の時背景 */
+    }
+    
+    
+    .drawer_menu .drawer_button.active .drawer_bar {
+        width: 49px;
+    }
+    .drawer_menu .drawer_button.active .drawer_bar1 {
+        transform: rotate(30deg);
+    }
+    .drawer_menu .drawer_button.active .drawer_bar2 {
+        opacity: 0;
+    }
+    .drawer_menu .drawer_button.active .drawer_bar3 {
+        transform: rotate(-30deg);
+    }
+    .drawer_menu .drawer_button.active .drawer_menu_text {
+        display: none;
+    }
+    .drawer_menu .drawer_button.active .drawer_close {
+        display: block;
+    }
+    .drawer_menu .drawer_bar {
+        display: block;
+        height: 2px;
+        margin: 10px 0;
+        transition: all 0.2s;
+        transform-origin: 0 0;
+    }
+    .drawer_menu .drawer_text {
+        text-align: center;
+        font-size: 10px;
+    }
+    .drawer_menu .drawer_close {
+        letter-spacing: 0.08em;
+        display: none;
+    }
+    .drawer_menu .drawer_menu_text {
+        display: block;
+    }
+    .drawer_menu .drawer_nav_wrapper {
+        width: 320px;
+        height: 100%;
+        transition: all 0.2s;
+        transform: translate(320px);
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 10000;
+        background-color: #FFF;/* ドロワーメニュー内背景色 */
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .drawer_menu .drawer_nav {
+        display: block;
+        position: relative;
+        margin-top: 50px;
+        padding-left: 10px;}
+    
+    .drawer_menu .drawer_nav li {
+        background-color: #fff;
+        height: auto;
+        line-height: 50px;/*  ドロワーメニューリスト項目高さ */
+        position: relative;
+        border-top: 1px solid #eee;
+    }
+    .drawer_menu .drawer_nav li a {
+        background-color: #fff;/* ドロワーメニューリスト背景色 */
+        color: #555;/* ドロワーメニューリスト文字色 */
+        text-align: left;
+    }
+    
+  .drawer_menu .drawer_nav > li > a {
+       display: block;
+    }
+    
+.drawer_menu .drawer_nav li a:hover {
+        background-color: rgba(207,190,167,0.20);	/* メニュー項目にマウスが載ったときの背景色 */    }
+    
+    /* スマートフォン2階層目 */
+    /*.drawer_menu .drawer_nav li:hover ul.second-level {
+        display: block;
+    }
+    .drawer_menu .drawer_nav li ul.second-level {
+        visibility: visible;
+        position: relative;
+        padding: 0;
+        z-index: 1001;
+    }
+    .drawer_menu .drawer_nav li ul.second-level li {
+        border-top: 1px solid #eee;
+    }
+*/
+    
+    .drawer_menu .drawer_nav li ul.second-level li a {
+        padding-left: 1.5em;
+    }
+    
+    .drawer_menu .drawer_nav_wrapper.open {
+        transform: translate(0);
+    }
+    .drawer_menu.left .drawer_button {
+        right: auto;
+        left: 32px;
+    }
+    .drawer_menu.left .drawer_nav_wrapper {
+        transform: translate(-320px);
+        right: auto;
+        left: 0;
+    }
+    .drawer_menu.left .drawer_nav_wrapper.open {
+        transform: translate(0);
+    }
+
+}
+/*  ウィジェットタイトル */
+.drawer-title {
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: #F74782;/* ドロワーメニュー内タイトルライン背景色 */
+    color: #fff;
+}
+/* フォローボタン */
+
+.pc-hidden_btm{padding-bottom: 50px;}
+
+.pc-hidden .profile-icon {
+    float: none;
+}
+
+.sp_nav_tel{background-color: #595757;
+    color: #ffffff;
+font-size: 100%;
+font-weight: 700;
+font-family: 'Rubik', sans-serif;
+    border-radius: 6px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-left: 10px;
+    line-height: 1.4;
+
+
+}
+
+.sp_nav_tel a{display: block;
+   padding-top: 10px;
+    padding-bottom: 10px;
+    color: #ffffff;
+}
+
+.sp_nav_tel_num:before {
+font-family: "Font Awesome 5 Free";
+content: "\f095";
+font-size: 88%;
+padding-right: 5px;
+font-weight: 700;}
+
+/* 小さい画面用の設定-------------- */
+
+@media (max-width:767px){
+.menu__item {
+ /* background: #5200b7;
+  color: #fff;*/
+  /*cursor: pointer;*/
+  /*display: block;*/
+  /*margin-bottom: 1px;*/
+}
+.menu__item__link {
+  /*color: #fff;*/
+  /*display: block;*/
+  line-height: 50px;
+  /*padding: 0 1rem;*/
+  position: relative;
+}
+.menu__item__link:after {
+content: '\f067';
+display: block;
+font-family: "Font Awesome 5 Free";
+line-height: 50px;
+position: absolute;
+right: 20px;
+text-align: center;
+top: 0;
+width: 50px;
+font-weight: 700;
+color: #a68b62;
+}
+    
+#beautypage .menu__item__link:after {
+color: #a68b62;
+}
+    
+.menu__item__link.on:after {
+content: '\f068';
+font-weight: 700;
+}
+ 
+.submenu {
+display: none;
+padding-left: 1em;
+}
+
+    
+	}
+/* -------------end------------- */
+
+
+/*@media print {
+.sp_nav_tel {
+        display: none;
+      }
+    }*/

@@ -1717,7 +1717,7 @@ a:link {
 }
 /* スマートフォン表示用のスタイル */
 @media screen and (max-width: 768px) {
-    .responsive-table thead {
+    .responsive-table-pico thead {
         display: none; /* ヘッダーを非表示に */
     }
 
@@ -1751,3 +1751,39 @@ a:link {
     .responsive-table td:nth-child(5)::before { content: "9回コース"; }
 }
 
+/* スマートフォン表示用のスタイル */
+@media screen and (max-width: 768px) {
+    .responsive-table-treatment thead {
+        display: none; /* ヘッダーを非表示に */
+    }
+
+    .responsive-table tbody, .responsive-table tr {
+        display: block;
+        width: 100%;
+    }
+
+    .responsive-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+    }
+
+    .responsive-table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .responsive-table td::before {
+        content: attr(data-label); /* data-label属性の値を使用 */
+        font-weight: bold;
+        flex: 1;
+    }
+
+    /* カラムヘッダーの内容を表示する */
+    .responsive-table td:nth-child(1)::before { content: "ジェネシス"; }
+    .responsive-table td:nth-child(2)::before { content: "1回料金"; }
+    .responsive-table td:nth-child(3)::before { content: "3回コース"; }
+    .responsive-table td:nth-child(4)::before { content: "6回コース"; }
+    .responsive-table td:nth-child(5)::before { content: "9回コース"; }
+}

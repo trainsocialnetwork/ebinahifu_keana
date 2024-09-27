@@ -1,8 +1,12 @@
 body {
-	/*font-family: "游明朝体", "Yu Mincho", "YuMincho", "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif !important;*/
-	/*font-family: '游明朝','游明朝体','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;*/
 	font-family: 'Noto Serif JP', sans-serif !important;
 }
+@media (max-width: 768px) {
+    body {
+        padding-top: 56px;
+    }
+}
+
 table {
 	font-family: 'Noto Sans JP', sans-serif;
 }
@@ -187,12 +191,22 @@ p {
 }
 
 /* ヘッダー */
+@media (max-width: 768px) {
+    .header_fixed {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000; /* ヘッダーが他の要素の前面に表示されるように設定 */
+      background-color: #fff; /* ヘッダーの背景色を設定（必要に応じて変更） */
+    }
+}
+
 .header_flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 6px;
+    padding-bottom: 3px;
     width: 95%;
     max-width: 1000px;
     margin-left: auto;
@@ -200,6 +214,7 @@ p {
     text-align: center;
     margin-bottom: initial;
 }
+
 ul.header_flex {
 	padding-left: initial;
 }
@@ -419,11 +434,20 @@ section#cta {
 }
 
 /***********************特徴セクション************************/
+h3.h3-mgn,
 h4.h4-mgn {
     margin: 1rem 0 1.5rem 0;
 }
+
 #features h4.mb-3 {
     letter-spacing: -1px;
+}
+@media (max-width: 767px) {
+    #features h2 {
+        padding-right: 0;
+        padding-left: 0;
+        letter-spacing: 0px;
+    }
 }
 
 *, *::before, *::after {
@@ -446,7 +470,7 @@ section#features hr.sp-hr.add-sphr {
 }
 
 .add-space {
-    margin: 3rem 0;
+    margin: 2rem 0;
 }
 @media (min-width: 768px) {
 	.add-space {
@@ -572,11 +596,35 @@ hr.add-m {
 .hosoku p {
 	line-height: 1rem;
 }
-
-/***********************医療脱毛とはセクション***********************/
-section#whtatis {
-	background-color: #FFF;
+#features div.bg-white{
+    margin-bottom: 3rem;
 }
+
+/***********************治療法***********************/
+
+p > .u-line {
+    text-decoration: underline !important;
+}
+
+#method .non-x-pd{
+    padding-left: 0;
+    padding-right: 0;
+}
+#cause h2 {
+    letter-spacing: 1px;
+}
+
+@media (max-width: 767px) {
+    img.face {
+        width: 65%;
+        margin: auto;
+    }
+}
+
+/***********************費用セクション***********************/
+/*section#whtatis {*/
+/*	background-color: #FFF;*/
+/*}*/
 h4.text-start {
     line-height: 28px;
 }
@@ -596,9 +644,11 @@ h4.text-start {
 	background-color: #6F6D5F; /* th */
 	color: #FFF;
 }
-.table-pd td:nth-child(1) {
-	background-color: #FAF8F0; /* col1 */
+/*１列目の色*/
+td.td-color.custom-bg-color {
+    background-color: #FAF8F0;
 }
+
 h3.watis-fs {
 	font-size: 1.3rem !important;
 }
@@ -623,8 +673,18 @@ h3.watis-fs {
 @media (max-width: 767px) {
     .table-pd th:first-child,
     .table-pd td:first-child {
-        width: 6rem; /* 希望する幅に調整してください */
+        width: 5rem;
     }
+}
+tr th.course-header {
+    background-color: #6F6D5F;
+    color: #FFF;
+}
+td.td-color {
+    background-color: #FAF8F0;
+}
+.custom-bg-color {
+    background-color: #FAF8F0;
 }
 
 /***********************ご相談***********************/
@@ -894,7 +954,7 @@ span.f-title {
 }
 .flow-box2 {
 	background-color: #FFF;
-	margin: 0 0 3rem 0;
+	margin: 0 0 2rem 0;
 }
 
 .flow-box::after {
@@ -974,29 +1034,19 @@ section#price {
 .table-pd tbody tr:last-child {
 	border-bottom: 1px solid #6F6D5F;
 }
-.table-price tbody tr:nth-child(odd) td {
-	background-color: #FFFFFF; /* 奇数行の背景色 */
-}
 
-.table-price tbody tr:nth-child(even) td {
-	background-color: #F8F8F7; /* 偶数行の背景色 */
-}
 .table-price th {
 	vertical-align: middle;
 }
-.table-price th:first-child,
-.table-price td:first-child {
-	width: 8.5rem;
-}
+
 @media (min-width: 768px) {
 	.table-price th:first-child,
 	.table-price td:first-child {
 		width: initial;
 	}
 }
-
 .table-price tr {
-	height: 3rem;
+	height: 2rem;
 }
 
 /***********************支払い***********************/
@@ -1097,7 +1147,7 @@ img.cardimg {
 .caution-p p::before {
 	content: '';
 	position: absolute;
-	top: 4px;
+	top: 7px;
 	left: 12px;
 	width: 4px;
 	height: 1em;
@@ -1648,6 +1698,8 @@ a:link {
 	display: none;
 }
 
+
+
 /*ページトップ*/
 /*@media (max-width: 767px) {*/
 /*    .pagetop {*/
@@ -1714,76 +1766,4 @@ a:link {
 	.desktop-only {
 		display: block; /* デスクトップでは表示 */
 	}
-}
-/* スマートフォン表示用のスタイル */
-@media screen and (max-width: 768px) {
-    .responsive-table-pico thead {
-        display: none; /* ヘッダーを非表示に */
-    }
-
-    .responsive-table tbody, .responsive-table tr {
-        display: block;
-        width: 100%;
-    }
-
-    .responsive-table tr {
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-    }
-
-    .responsive-table td {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .responsive-table td::before {
-        content: attr(data-label); /* data-label属性の値を使用 */
-        font-weight: bold;
-        flex: 1;
-    }
-
-    .responsive-table td:nth-child(1)::before { content: "ピコレーザー"; }
-    .responsive-table td:nth-child(2)::before { content: "1回料金"; }
-    .responsive-table td:nth-child(3)::before { content: "3回コース"; }
-    .responsive-table td:nth-child(4)::before { content: "6回コース"; }
-    .responsive-table td:nth-child(5)::before { content: "9回コース"; }
-}
-
-/* スマートフォン表示用のスタイル */
-@media screen and (max-width: 768px) {
-    .responsive-table-treatment thead {
-        display: none; /* ヘッダーを非表示に */
-    }
-
-    .responsive-table tbody, .responsive-table tr {
-        display: block;
-        width: 100%;
-    }
-
-    .responsive-table tr {
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-    }
-
-    .responsive-table td {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .responsive-table td::before {
-        content: attr(data-label); /* data-label属性の値を使用 */
-        font-weight: bold;
-        flex: 1;
-    }
-
-    /* カラムヘッダーの内容を表示する */
-    .responsive-table td:nth-child(1)::before { content: "ジェネシス"; }
-    .responsive-table td:nth-child(2)::before { content: "1回料金"; }
-    .responsive-table td:nth-child(3)::before { content: "3回コース"; }
-    .responsive-table td:nth-child(4)::before { content: "6回コース"; }
-    .responsive-table td:nth-child(5)::before { content: "9回コース"; }
 }

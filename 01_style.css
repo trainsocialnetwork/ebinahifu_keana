@@ -1775,3 +1775,9 @@ a:link {
     }
 }
 
+/* SP（スマホ）版の時のみ色を変える */
+@media (max-width: 768px) {
+    .sp-highlight {
+        background-color: #d1cfc9; /* お好みの色に変更してください */
+    }
+}

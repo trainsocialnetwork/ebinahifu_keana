@@ -621,6 +621,32 @@ p > .u-line {
     }
 }
 
+
+/***********************肌のキメ***********************/
+
+p > .u-line {
+    text-decoration: underline !important;
+}
+
+#method .non-x-pd{
+    padding-left: 0;
+    padding-right: 0;
+}
+#cause h2 {
+    letter-spacing: 1px;
+}
+
+@media (max-width: 767px) {
+    img.face {
+        width: 65%;
+        margin: auto;
+    }
+}
+
+section#kime {
+	background-color: #F2F1F0;
+}
+
 /***********************費用セクション***********************/
 /*section#whtatis {*/
 /*	background-color: #FFF;*/

@@ -1767,3 +1767,11 @@ a:link {
 		display: block; /* デスクトップでは表示 */
 	}
 }
+/* ピコレーザーのスマホ版での改行用 */
+@media (max-width: 768px) {
+    .break-pico-mobile::after {
+        content: "\A"; /* 改行を挿入 */
+        white-space: pre; /* 改行を適用 */
+    }
+}
+

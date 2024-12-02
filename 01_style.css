@@ -1214,6 +1214,9 @@ hr.add-mr {
 	img.my-3.my-md-5.img-fluid {
         width: 35%;
     }
+    .k-clinic a {
+        font-size: 18px;
+    }
 }
 @media (max-width: 767px) {
     .kanshu-cli {

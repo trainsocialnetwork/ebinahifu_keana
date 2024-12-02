@@ -368,15 +368,22 @@ img.main-img {
     letter-spacing: 2px;
 }
 @media (min-width: 768px) {
+    .call-txt {
+    	font-size: 28px;
+    	font-weight: 500;
+    }
 	.cta-btn {
 		background-image: linear-gradient(to left, #867953, #ADA58C);
 		padding: 34px 0 30px 0;
 		font-weight: bold;
 		font-size: 28px;
 		color: #FFF;
-		width: 50%;
+		width: 45%;
 		height: auto;
 	}
+	.cta-supplement {
+        font-size: 22px;
+    }
 }
 
 .image-wrapper {
@@ -700,7 +707,7 @@ td.td-color {
 
 /***********************ご相談***********************/
 section#consultation {
-	background-color: #65533d;
+	background-color: #FFF;
 	color: #fff;
 }
 .under-line {

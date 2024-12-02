@@ -432,6 +432,10 @@ img.main-img {
 section#cta {
 	background-color: #F2F1F0;
 }
+.no-pd-x {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
 
 /***********************特徴セクション************************/
 h3.h3-mgn,

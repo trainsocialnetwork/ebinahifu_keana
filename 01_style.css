@@ -191,6 +191,13 @@ p {
 }
 
 /* ヘッダー */
+.drawer_menu_point {
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1002;
+}
+
 @media (max-width: 768px) {
     .header_fixed {
       position: fixed;
@@ -335,19 +342,73 @@ img.main-img {
 }
 @media (min-width: 768px) {
 	img.main-img {
-		width: 80%;
+		width: 78%;
 		padding-top: 3rem;
 		margin: auto;
 		display: block;
 	}
 }
 .hero-section {
-	background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 0%), url('./img/title_bg.webp');
+	background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.85) 0%), url('./img/title_bg.webp');
 	background-size: cover; /* 画像をコンテナ全体に拡大 */
 	background-repeat: no-repeat; /* 画像の繰り返しを無効化 */
 	background-position: center center;
 	padding-top: 40px;
 	padding-bottom: 40px;
+	position: relative;
+}
+/*パンくず*/
+.breadcrumb_wrap {
+    padding-top: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #595757;
+}
+@media (max-width: 767px) {
+    .hero-section {
+    	padding-top: 20px;
+    	padding-bottom: 20px;
+    }
+    .breadcrumb_wrap {
+        top: 100%;
+    }
+    .mainview {
+        padding-top: 2rem;
+    } 
+    h1.h1-size {
+        font-size: 130%;
+        font-weight: 400;
+        margin-bottom: 0;
+    }
+    p.h1-subsize {
+        font-size: 70%;
+        line-height: 18px;
+    }
+    .breadcrumb li {
+        font-size: 80%;
+    }
+}
+
+.breadcrumb {
+    display: flex;
+    font-size: 88%;
+}
+.breadcrumb li {
+    padding-right: .5em;
+}
+.breadcrumb li a {
+    text-decoration: underline;
+    color: #595757;
+}
+.breadcrumb li:after {
+    content: '>';
+    padding-left: .5em;
+}
+.breadcrumb li:last-child::after {
+    padding: 0;
+    content: "";
 }
 
 /***********************CTA***********************/

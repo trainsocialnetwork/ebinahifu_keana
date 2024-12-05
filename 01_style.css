@@ -1089,7 +1089,7 @@ span.answer-text {
 }
 .answer-content {
 	display: flex;
-	align-items: flex-start;
+	align-items: center;
     padding-top: 1rem;
     padding-bottom: 0.5rem;
 }

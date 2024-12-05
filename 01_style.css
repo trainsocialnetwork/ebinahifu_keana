@@ -691,6 +691,7 @@ hr.add-m {
 
 p > .u-line {
     text-decoration: underline !important;
+    color: #000;
 }
 
 #method .non-x-pd{
@@ -701,7 +702,7 @@ p > .u-line {
     letter-spacing: 1px;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 768px) {
     img.face {
         width: 65%;
         margin: auto;

@@ -10,6 +10,12 @@ body {
 table {
 	font-family: 'Noto Sans JP', sans-serif;
 }
+@media (min-width: 768px) {
+    section h1.font-go {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+}
 th {
     font-weight: 400;
     font-size: 14px;
